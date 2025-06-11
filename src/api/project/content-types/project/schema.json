@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Completed",
+        "In Progress",
+        "Planned"
+      ]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "projectUrl": {
+      "type": "string"
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "challenges": {
+      "type": "blocks"
+    },
+    "solutions": {
+      "type": "blocks"
+    },
+    "results": {
+      "type": "blocks"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "project_features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project-feature.project-feature",
+      "mappedBy": "project"
+    },
+    "project_technologies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project-technology.project-technology",
+      "inversedBy": "projects"
+    },
+    "project_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project-category.project-category",
+      "mappedBy": "project"
+    }
+  }
+}

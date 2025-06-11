@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "hero_banners",
+  "info": {
+    "singularName": "hero-banner",
+    "pluralName": "hero-banners",
+    "displayName": "Hero Banner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "title_colored": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "component": "ui-elements.cta",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skills",
+  "info": {
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "Skill"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "proficiency": {
+      "type": "enumeration",
+      "enum": [
+        "Expert",
+        "Advanced",
+        "Proficient",
+        "Intermediate",
+        "Beginner"
+      ]
+    },
+    "order": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "skill_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::skill-categorie.skill-categorie",
+      "inversedBy": "skills"
+    },
+    "skill_technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill-technology.skill-technology",
+      "mappedBy": "skill"
+    }
+  }
+}
